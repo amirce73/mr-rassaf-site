@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مشاوره کنکور | مهندس مهدی رصاف - اصفهان</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap");
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* انیمیشن کلیک دکمه */
+    @keyframes clickEffect {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 transparent;
+      }
+      50% {
+        transform: scale(1.12);
+        box-shadow: 0 0 12px 4px rgba(124, 58, 237, 0.6);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 transparent;
+      }
+    }
+
+    .clicked {
+      animation: clickEffect 0.35s forwards;
+    }
+
+    /* ناوبری */
+    nav {
+      background: #ffffffcc;
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+    }
+
+    nav a.nav-link {
+      position: relative;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      color: #334155;
+      transition: color 0.3s ease;
+    }
+
+    nav a.nav-link:hover {
+      color: white;
+    }
+
+    nav a.nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      right: 0;
+      background: #7c3aed;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a.nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* هرو */
+    .hero-gradient {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #fef3c7;
+      padding: 5rem 1rem 6rem;
+      text-align: right;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      color: #fde68a;
+    }
+
+    .hero-text p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      color: #f3f4f6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* دکمه‌ها با انیمیشن hover و کلیک */
+    button,
+    a.btn-link {
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 0.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1.125rem;
+      transition: all 0.3s ease;
+      border: none;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    button.primary,
+    a.btn-primary {
+      background: #fde68a;
+      color: #4b0082;
+      box-shadow: 0 6px 0 #fcd34d;
+      border-bottom: 4px solid #d6bb00;
+    }
+
+    button.primary:hover,
+    a.btn-primary:hover {
+      background: #facc15;
+      box-shadow: 0 4px 0 #b45309;
+      border-bottom: 2px solid #92400e;
+      transform: translateY(2px);
+    }
+
+    button.secondary,
+    a.btn-secondary {
+      background: #fde68a;
+      color: #4b0082;
+      box-shadow: 0 6px 0 #fcd34d;
+      border-bottom: 4px solid #d6bb00;
+    }
+
+    button.secondary:hover,
+    a.btn-secondary:hover {
+      background: #facc15;
+      box-shadow: 0 4px 0 #b45309;
+      border-bottom: 2px solid #92400e;
+      transform: translateY(2px);
+    }
+
+    .hero-container {
+      margin-left: 100px;
+      display: flex;
+      gap: 2rem;              /* فاصله بین کادرها */
+      justify-content: center;
+      flex-wrap: wrap;        /* در موبایل زیر هم بیاد */
+      margin: 2rem auto;
+    }
+
+    .hero-image {
+      max-width: 500px;
+      flex: 1 1 40%;
+      display: grid;
+      place-items: center;
+      margin-left: 50px;
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: grid;
+      place-items: center;
+      height: auto;
+      display: block;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 0;
+      background: #fde68a;
+      color: #4b0082;
+      font-weight: 700;
+      border-radius: 1rem;
+      display: grid;
+      place-items: center;
+      padding: 0.5rem;
+      width: 90%;
+      margin-left: 50px;
+      left: 0;
+      right: 0;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.15);
+      user-select: none;
+    }
+
+    /* بخش آمار */
+    .stats-section {
+      background: #fff;
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+      background: #e0e7ff;
+      box-shadow: 0 4px 15px rgb(124 58 237 / 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .stat-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgb(124 58 237 / 0.35);
+    }
+
+    .stat-icon {
+      font-size: 2.8rem;
+      color: #7c3aed;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #4f46e5;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: #444;
+    }
+
+    /* بخش خدمات */
+    .services-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .services-header h2 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .services-header p {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+<!--    .services-grid {-->
+<!--      display: grid;-->
+<!--      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));-->
+<!--      gap: 1.8rem;-->
+<!--    }-->
+    .services-grid {
+        display: flex;            /* استفاده از فلکس برای ردیف کردن کارت‌ها */
+        flex-wrap: wrap;          /* اگر صفحه کوچک شد، کارت‌ها به خط بعد نروند */
+        gap: 20px;                /* فاصله بین کارت‌ها */
+        justify-content: space-between; /* فاصله مساوی بین کارت‌ها */
+    }
+
+    .service-card {
+        flex: 1 1 calc(25% - 20px); /* هر کارت 25٪ عرض منهای فاصله بین کارت‌ها */
+        box-sizing: border-box;     /* برای محاسبه padding و border داخل عرض */
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 3px 15px rgb(0 0 0 / 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        user-select: none;
+    }
+
+<!--    .service-card {-->
+<!--      background: #fafafa;-->
+<!--      border-radius: 1rem;-->
+<!--      padding: 2rem;-->
+<!--      box-shadow: 0 3px 15px rgb(0 0 0 / 0.07);-->
+<!--      transition: transform 0.3s ease, box-shadow 0.3s ease;-->
+<!--      user-select: none;-->
+<!--    }-->
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgb(124 58 237 / 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: #7c3aed;
+      margin-bottom: 1rem;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .service-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .service-list li i {
+      color: #22c55e;
+      margin-top: 0.2rem;
+      font-size: 1rem;
+    }
+
+    /* بخش درباره ما */
+    .about-section {
+      max-width: 1100px;
+      margin: 5rem auto 7rem;
+      padding: 0 1rem;
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1 1 400px;
+      border-radius: 1rem;
+      box-shadow: 0 12px 40px rgb(124 58 237 / 0.3);
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      display: block;
+      border-radius: 1rem;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+      color: #334155;
+    }
+
+    .about-text h2 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+
+    .about-text p {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: #64748b;
+    }
+
+    .about-features {
+      margin-bottom: 2rem;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    .about-feature i {
+      color: #7c3aed;
+      margin-top: 0.2rem;
+      font-size: 1.25rem;
+    }
+
+    /* دوره ها */
+    .courses-section {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .courses-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .courses-header h2 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .courses-header p {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .course-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 18px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgb(124 58 237 / 0.4);
+    }
+
+    .course-icon {
+      flex-shrink: 0;
+      background: #ede9fe;
+      color: #7c3aed;
+      font-size: 3.8rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .course-content {
+      padding: 1.8rem 1.6rem 2.4rem;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-title {
+      font-size: 1.375rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      color: #1e293b;
+    }
+
+    .course-desc {
+      font-size: 1rem;
+      color: #475569;
+      margin-bottom: 1.6rem;
+      flex-grow: 1;
+    }
+
+    .course-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .course-footer span {
+      color: #7c3aed;
+      font-size: 1.125rem;
+    }
+
+    .course-footer a {
+      color: #7c3aed;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .course-footer a:hover {
+      color: #4c1d95;
+    }
+
+    /* نظرات دانش‌آموزان */
+    .testimonials-section {
+      max-width: 1200px;
+      margin: 5rem auto;
+      padding: 0 1rem;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .testimonials-header h2 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonials-header p {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: #fafafa;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.06);
+      transition: transform 0.3s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 20px 40px rgb(124 58 237 / 0.25);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #ede9fe;
+      color: #7c3aed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .testimonial-rank {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: #475569;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .testimonial-stars {
+      color: #facc15;
+      font-size: 1.1rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 2.5rem 1rem;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border-radius: 1rem;
+      box-shadow: 0 12px 40px rgba(124,58,237,0.08);
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 0.65rem;
+      border: 1px solid #e6eef8;
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+      background: #fbfdff;
+      outline: none;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      box-shadow: 0 6px 20px rgba(124,58,237,0.12);
+      border-color: #7c3aed;
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: #475569;
+    }
+
+    .contact-info-item i {
+      font-size: 1.25rem;
+      color: #7c3aed;
+      min-width: 36px;
+      text-align: center;
+    }
+
+    .form-success {
+      display: none;
+      background: #ecfdf5;
+      color: #065f46;
+      padding: 0.8rem 1rem;
+      border-radius: 0.6rem;
+      margin-top: 0.6rem;
+      border: 1px solid #bbf7d0;
+    }
+
+    .form-error {
+      display: none;
+      background: #fff1f2;
+      color: #b91c1c;
+      padding: 0.8rem 1rem;
+      border-radius: 0.6rem;
+      margin-top: 0.6rem;
+      border: 1px solid #fecaca;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: #7c3aed;
+      color: #fde68a;
+      text-align: center;
+      padding: 5rem 1rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      border-radius: 1.5rem 1.5rem 0 0;
+      box-shadow: 0 -8px 40px rgb(124 58 237 / 0.5);
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-gradient {
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .hero-image {
+        max-width: 100%;
+      }
+
+      .about-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="hidden md:flex sticky top-0 z-50">
+  <div class="flex items-center gap-3">
+    <i class="fas fa-graduation-cap text-indigo-600 text-2xl mr-8"></i>
+    <img
+            src="images/inmoshaver-logo.png"
+            class="h-16 w-auto"
+            alt="logo of inmoshaver"
+    />
+  </div>
+  <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center" style="padding-right: 4px"
+  >
+
+    <div class="hidden md:flex md:justify-end md:space-x-4 md:space-x-reverse ml-12 pl-12">
+      <a href="#home" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">صفحه اصلی</a>
+      <a href="#students" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">دانش آموزان</a>
+      <a href="#final" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">کارنامه نهایی</a>
+      <a href="#progress" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">پیشرفت‌ها</a>
+      <a href="#courses" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">دوره‌ها</a>
+      <a href="#testimonials" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">رضایت شما</a>
+      <a href="#contact" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">تماس</a>
+    </div>
+    <div class="flex items-center gap-2">
+<!--      <button-->
+<!--              id="btnRegisterNav"-->
+<!--              class="primary px-4 py-2 rounded-md text-sm hover:brightness-110"-->
+<!--              title="ثبت نام"-->
+<!--      >-->
+<!--        ثبت نام-->
+<!--      </button>-->
+<!--      <button-->
+<!--              id="btnLoginNav"-->
+<!--              class="secondary px-4 py-2 rounded-md text-sm hover:bg-yellow-300 hover:text-indigo-900"-->
+<!--              title="ورود"-->
+<!--      >-->
+<!--        ورود-->
+<!--      </button>-->
+    </div>
+  </div>
+</nav>
+<nav class="md:hidden sticky top-0 z-50 bg-indigo-700 text-white py-3">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+
+    <!-- لوگو -->
+    <div class="flex items-center gap-3">
+      <i class="fas fa-graduation-cap text-white text-2xl"></i>
+      <img src="images/inmoshaver-logo.png" class="h-10 w-auto" alt="لوگو" />
+    </div>
+
+    <!-- dropdown موبایل -->
+    <div>
+      <select onchange="if(this.value) window.location.href=this.value;" class="bg-white text-indigo-700 px-3 py-2 rounded shadow">
+        <option value="">منو را انتخاب کنید</option>
+        <option value="#home">صفحه اصلی</option>
+        <option value="#students">دانش آموزان</option>
+        <option value="#final">کارنامه نهایی</option>
+        <option value="#progress">پیشرفت‌ها</option>
+        <option value="#courses">دوره‌ها</option>
+        <option value="#testimonials">رضایت شما</option>
+        <option value="#contact">تماس</option>
+      </select>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-gradient">
+  <div class="hero-text">
+    <h1>
+      مشاوره تخصصی کنکور با
+      <br>
+      <span>*این مشاور*</span>
+    </h1>
+    <p>
+      با برنامه‌ریزی شخصی‌سازی شده و مشاوره حرفه‌ای، مسیر موفقیت در کنکور را
+      برای شما هموار می‌کنیم.
+    </p>
+
+    <!-- Socials -->
+    <div class="hero-socials mt-6 flex gap-6">
+      <!-- Telegram -->
+      <a href="https://t.me/inmoshaver" target="_blank" class="flex items-center gap-2 px-3 py-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition">
+        <i class="fa-brands fa-telegram text-blue-600 text-lg"></i>
+        <span class="font-medium text-gray-800">inmoshaver@</span>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/inmoshaver.ir" target="_blank" class="flex items-center gap-2 px-3 py-2 bg-pink-100 hover:bg-pink-200 rounded-lg transition">
+        <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
+        <span class="font-medium text-gray-800">inmoshaver.ir@</span>
+      </a>
+    </div>
+    <!--      <button-->
+    <!--              id="btnRegister"-->
+    <!--              class="primary px-4 py-2 rounded-md text-sm hover:brightness-110"-->
+    <!--              aria-label="ثبت نام"-->
+    <!--              title="ثبت نام"-->
+    <!--      >-->
+    <!--        ثبت نام-->
+    <!--      </button>-->
+    <!--      <button-->
+    <!--              id="btnLogin"-->
+    <!--              class="secondary px-4 py-2 rounded-md text-sm hover:bg-yellow-300 hover:text-indigo-900"-->
+    <!--              aria-label="ورود"-->
+    <!--              title="ورود"-->
+    <!--      >-->
+    <!--        ورود-->
+    <!--      </button>-->
+  </div>
+
+  <!-- جایگزین hero-container -->
+  <div class="hero-single">
+    <style>
+      :root{
+        --container-max-width:600px;
+        --hero-image-height-desktop:300px; /* ارتفاع عکس در دسکتاپ */
+        --hero-image-height-tablet:250px;  /* ارتفاع در تبلت */
+        --hero-image-height-mobile:160px;  /* ارتفاع در موبایل */
+        --content-max-width:980px;         /* پهنای متن زیر عکس */
+        --text-left-offset:50px;           /* فاصله متن از سمت چپ (قابلیت تغییر) */
+        --gap:22px;
+        --accent:#4b0082;
+        --card-bg: #ffffff;
+        --card-radius:12px;
+        --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      }
+
+      .hero-single{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:var(--gap);
+        padding:28px 16px;
+        box-sizing:border-box;
+        width:100%;
+        background:transparent; /* در صورت نیاز گرادینت یا پس‌زمینه را اینجا بگذارید */
+      }
+
+      /* wrapper عکس: حتماً overflow:hidden تا هیچ المانی از کناره‌ها بیرون نزند */
+      .hero-image-wrap{
+        width:100%;
+        max-width:var(--container-max-width);
+        height:var(--hero-image-height-desktop);
+        border-radius:14px;
+        overflow:hidden;
+        display:block;
+        box-shadow:var(--card-shadow);
+        background:#efeff6;
+      }
+      .hero-image-wrap img{
+        width:100%;
+        height:100%;
+        object-fit:cover; /* عکس افقی را طوری می‌کشد که چارچوب را پر کند */
+        display:block;
+        vertical-align:middle;
+      }
+
+      /* کارت توضیحات زیر عکس */
+      .hero-details{
+        width:100%;
+        max-width:var(--content-max-width);
+        background:var(--card-bg);
+        border-radius:var(--card-radius);
+        box-shadow:var(--card-shadow);
+        padding:20px 20px 20px calc(var(--text-left-offset) + 12px);
+        box-sizing:border-box;
+        line-height:1.6;
+        color:#222;
+        text-align:right; /* RTL */
+      }
+
+      .hero-details .title{
+        font-size:1.15rem;
+        color:var(--accent);
+        font-weight:800;
+        margin-bottom:6px;
+      }
+      .hero-details .subtitle{
+        font-size:0.95rem;
+        color:#444;
+        margin-bottom:10px;
+      }
+      .hero-details .long-text{
+        margin-top:8px;
+        font-size:0.95rem;
+        color:#333;
+        white-space:pre-wrap; /* اگر متن طولانی و با شکستن خط وارد کردی، حفظ شود */
+      }
+
+      .resume-list{ margin-top:14px; display:block; gap:8px }
+      .resume-item{ display:flex; align-items:flex-start; gap:10px; margin-bottom:8px }
+      .telegram-icon{ color: #0088cc; display:flex; align-items:flex-start; gap:8px; margin-bottom:8px}
+      .telegram-icon:hover {color: #005f99}
+      .instagram-icon{color:#d6249f; display:flex;align-items:flex-start; gap:10px; margin-bottom:8px}
+      .instagram-icon:hover {color:#a81c7d;}
+      .instagram-icon i{ margin-top:4px; flex-shrink:0 }
+      .telegram-icon i{ margin-top:4px; flex-shrink:0 }
+      .resume-item i{ color:green; margin-top:4px; flex-shrink:0 }
+
+      /* واکنش‌گرایی */
+      @media (max-width:1000px){
+        .hero-image-wrap{ height:var(--hero-image-height-tablet) }
+        :root{ --content-max-width:900px }
+      }
+      @media (max-width:640px){
+        .hero-image-wrap{ height:var(--hero-image-height-mobile) }
+        .hero-details{ padding-left:18px; padding-right:18px; text-align:right }
+        :root{ --text-left-offset:16px }
+      }
+
+      /* نکته ایمنی: اگه می‌خواهی روی صفحه‌های خاص حتما از تداخل جلوگیری شود */
+      .hero-single,
+      .hero-image-wrap,
+      .hero-details { position:relative; z-index:0 }
+    </style>
+
+    <!-- تصویر افقی بزرگ مرکزی -->
+    <figure class="hero-image-wrap" role="img" aria-label="عکس معرفی">
+      <img src="/images/این-مشاور.jpeg" alt="مشاوره کنکور — مهندس مهدی رصاف" loading="lazy" />
+    </figure>
+
+    <!-- توضیحات مفصل زیر تصویر -->
+    <div class="hero-details" aria-live="polite">
+      <div class="title">فعالیت ها در این مشاور</div>
+      <div class="subtitle">برنامه‌ریزی اختصاصی، پیگیری منظم و ارتقای مهارت‌های تست‌زنی</div>
+      <div class="resume-list" aria-hidden="false">
+        <!-- CSS: قرار بده داخل <style> یا فایل CSS -->
+        <style>
+          :root{
+            --tick-circle-color: green;
+            --tick-check-color:  white;
+            --tick-size: 20px;            /* اندازهٔ آیکون */
+          }
+
+          .resume-list{ margin-top:14px; display:block; gap:8px; padding:0; }
+          .resume-item{
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            margin-bottom:8px;
+            list-style:none;
+          }
+
+          .tick{
+            display:inline-block;
+            width: var(--tick-size);
+            height: var(--tick-size);
+            position: relative;
+            vertical-align: middle;
+            margin-left: 6px;
+            flex-shrink: 0;
+          }
+
+          .tick .tick-circle{
+            font-size: var(--tick-size);
+            color: var(--tick-circle-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            line-height: 1;
+          }
+
+          .tick .tick-check{
+            font-size: calc(var(--tick-size) * 0.55);
+            color: var(--tick-check-color);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -52%);
+            line-height: 1;
+          }
+
+          /* تنظیمات برای موبایل اگر لازم شد */
+          @media (max-width:640px){
+            :root{ --tick-size: 18px; }
+          }
+        </style>
+
+        <!-- HTML: جایگزین div های اصلی داخل resume-list -->
+        <div class="resume-list" aria-hidden="false">
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>️برنامه ریزی درسی انفرادی منظم و دقیق با توجه به خصوصیات مطالعاتی و درسی هر دانش آموز</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>پیاده سازی برنامه و آموزش اجرای کلیات و جزئیات بند بند برنامه</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>مشاوره انگیزشی انفرادی در راستای افزایش بازدهی ، اعتماد به نفس و انرژی مثبت دانش آموزان</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>جلسات همایشی و گروهی انگیزشی و آموزشی</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>آموزش مدیریت حرفه ای آزمون تحت سلسله آموزش های هنر آزمون دادن</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>بررسیو تحلیل آزمون به صورت کاملا جزئی</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>معرفی بهترین و پر بازده ترین منابع آموزشی ، کتاب ها ، کلاس ها و جزوات</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>ارائه روش های مطالعاتی دروس و تبیین شرایط اجرای آن برای هر دانش آموز</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>برگزاری آزمون های اجباری دروس تخصصی و عمومی به صورت تستی و تشریحی هر هفته همزمان با جلسه مشاوره</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>بررسی دقیق تکالیف ، پاسخ برگ ها و چرک نویس های هر دانش آموز در جلسه مشاور هفتگی</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>ارتباط تنگاتنگ با والدین ، دانش آموزان و ارائه گزارش های جزئی و دقیق از روند عملکرد هر دانش آموز به ایشان</span>
+          </div>
+
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>بررسی دقیق گزارش های دانش آموزان به صورت شبانه و ارتباط پیوسته با دانش آموزان در طول هفته</span>
+          </div>
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>ارائه جامع‌ترین روش‌های مطالعاتی و بررسی جز به جز دروس نهایی عمومی و اختصاصی برای هر دانش آموز</span>
+          </div>
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>معرفی باکیفیت‌ترین منابع مطالعاتی و کلاسهای دروس عمومی و اختصاصی برای دستیابی به بالاترین نمره در امتحانات نهایی</span>
+          </div>
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span>ارائه کامل و جامع استراتژی آزمون‌های نهایی و روش‌های تشریحی برای کسب بالاترین نمره دروس عمومی و اختصاصی</span>
+          </div>
+          <div class="resume-item">
+    <span class="tick" aria-hidden="true">
+      <i class="fas fa-circle tick-circle"></i>
+      <i class="fas fa-check tick-check"></i>
+    </span>
+            <span id="imp-txt-list" style="color: red;">ارائه مشاوره به صورت حضوری و تلفنی سرتاسر ایران</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" aria-label="آمار دانش‌آموزان" style="display: flex; justify-content: space-around; background-color: #f9f9f9; padding: 40px 20px; border-radius: 12px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+
+  <div class="stat-item" tabindex="0" role="button" onclick="location.href='/science.html'" style="cursor: pointer; background: white; width: 28%; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.12); padding: 25px 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="stat-icon" aria-hidden="true" style="font-size: 42px; color: #4a90e2; margin-bottom: 15px;"><i class="fa fa-syringe"></i></div>
+    <div class="stat-title" style="font-size: 20px; font-weight: 700; color: #222;">قبولی‌های تجربی</div>
+    <div class="stat-subtitle" style="margin-top: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+      رشته‌های پزشکی<br>
+      دندان پزشکی<br>
+      دامپزشکی<br>
+      داروسازی
+    </div>
+  </div>
+
+  <div class="stat-item" tabindex="0" role="button" onclick="location.href='/engineer.html'" style="cursor: pointer; background: white; width: 28%; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.12); padding: 25px 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="stat-icon" aria-hidden="true" style="font-size: 42px; color: #d94f4f; margin-bottom: 15px;"><i class="fa fa-hard-hat"></i></div>
+    <div class="stat-title" style="font-size: 20px; font-weight: 700; color: #222;">قبولی‌های ریاضی</div>
+    <div class="stat-subtitle" style="margin-top: 10px; font-size: 14px; color: #555;">
+      رشته‌های مهندسی
+    </div>
+  </div>
+
+  <div class="stat-item" tabindex="0" role="button" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'});" style="cursor: pointer; background: white; width: 28%; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.12); padding: 25px 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="stat-icon" aria-hidden="true" style="font-size: 42px; color: #4caf50; margin-bottom: 15px;"><i class="fas fa-chalkboard-teacher"></i></div>
+    <div class="stat-title" style="font-size: 20px; font-weight: 700; color: #222;">دوره‌ها</div>
+    <div class="stat-subtitle" style="margin-top: 10px; font-size: 14px; color: #555; line-height: 1.5;">
+      کلاس زیست حضوری<br>
+      کلاس زیست آنلاین<br>
+      مشاوره حضوری<br>
+      مشاوره آنلاین
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .stat-item:hover, .stat-item:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+    outline: none;
+  }
+</style>
+
+
+<!-- Services Section -->
+<section id="services" class="services-section" aria-label="خدمات تخصصی">
+  <div class="services-header">
+    <h2>خدمات تخصصی ما</h2>
+    <p>
+      با بهره‌گیری از جدیدترین متدهای آموزشی و مشاوره‌ای در سطح بین‌المللی،
+      شما را تا رسیدن به هدف‌تان همراهی می‌کنیم.
+    </p>
+  </div>
+  <div class="services-grid">
+    <article class="service-card" tabindex="0">
+      <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+      <h3 class="service-title">برنامه‌ریزی هوشمند هفتگی</h3>
+      <p class="service-desc">
+        برنامه‌ریزی دقیق روزانه و هفتگی با توجه به شرایط فردی و پیشرفت تحصیلی
+      </p>
+      <ul class="service-list">
+        <li><i class="fas fa-check"></i> تنظیم برنامه بر اساس ساعت زیستی</li>
+        <li><i class="fas fa-check"></i> پیگیری مستمر پیشرفت</li>
+      </ul>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+      <h3 class="service-title">تحلیل پیشرفته آزمون‌ها</h3>
+      <p class="service-desc">
+        آنالیز حرفه‌ای نتایج آزمون‌های آزمایشی با ارائه گزارش‌های تحلیلی
+      </p>
+      <ul class="service-list">
+        <li><i class="fas fa-check"></i> شناسایی نقاط ضعف و قوت</li>
+        <li><i class="fas fa-check"></i> مقایسه با رقبا</li>
+      </ul>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon"><i class="fas fa-brain"></i></div>
+      <h3 class="service-title">مشاوره روانشناسی تخصصی</h3>
+      <p class="service-desc">
+        مدیریت استرس، اضطراب و افزایش انگیزه با متدهای روز دنیا
+      </p>
+      <ul class="service-list">
+        <li><i class="fas fa-check"></i> جلسات فردی و گروهی</li>
+        <li><i class="fas fa-check"></i> تکنیک‌های افزایش تمرکز</li>
+      </ul>
+    </article>
+
+    <article class="service-card" tabindex="0">
+      <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+      <h3 class="service-title">پلتفرم اختصاصی مشاوره</h3>
+      <p class="service-desc">
+        دسترسی به نرم‌افزار تخصصی پیگیری و مشاوره آنلاین و حضوری
+      </p>
+      <ul class="service-list">
+        <li><i class="fas fa-check"></i> مشاهده برنامه‌ها و گزارشات</li>
+        <li><i class="fas fa-check"></i> ارتباط مستقیم با مشاور</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section" aria-label="درباره مهندس مهدی رصاف">
+  <div class="about-image">
+    <img
+            src="/images/mr-rassaf.jpeg"
+            loading="lazy"
+            alt=""
+    />
+  </div>
+
+  <div class="about-text">
+    <h2>مهندس مهدی رصاف</h2>
+    <div class="about-features">
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>فارغ التحصیل کارشناسی ارشد رشته مهندسی مکانیک</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>عضو سابق بنیاد ملی نخبگان</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>عضو سابق خانه ریاضیات اصفهان</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>مخترع بیش از 2 اختراع ثبت شده در اداره ثبت اختراعات ایران</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>نویسنده بیش از ده مقاله تخصصی مهندسی مکانیک در ژورنال‌های داخل و خارج کشور</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>مشاور رتبه های ۹، ۲۲، ۳۴، ۳۸، ۳۹، ۴۹، ۵۲، ۷۷، دوتا ۷۸، ۸۳ و بیش از ۵۰۰ قبولی عالی‌رتبه دیگر</span>
+      </div>
+    </div>
+    <button
+            id="btnContact"
+            class="primary"
+            aria-label="ارتباط با مهندس رصاف"
+            title="ارتباط با مهندس رصاف"
+    >
+      مشاهده روزمه کامل و تماس
+    </button>
+  </div>
+</section>
+
+<section id="about2" class="about-section" aria-label="درباره مهندس مهدی رصاف">
+  <div class="about-image">
+    <img
+            src="/images/mr-mazaheri.jpeg"
+            loading="lazy"
+            alt=""
+    />
+  </div>
+
+  <div class="about-text">
+    <h2>دکتر علی مظاهری</h2>
+    <div class="about-features">
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>دکتری مهندسی مکانیک ساخت و تولید</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>بازرس موُسسه قلمچی سال های 1390 تا 1392</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>مدیر کارگروه کارشناسی ارشد قلمچی سال های 1392 تا 1393</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>️مدیر حوزه کارشناسی قلمچی سال های 1393 تا 1395</span>
+      </div>
+      <div class="about-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>مشاور رتبه های ۷، ۹، ۱۶، ۲۲، ۲۷، ۳۴، ۳۹، ۴۹، دوتا ۵۲، ۷۷، دوتا ۷۸، ۸۳ و ۸۸ و بیش از ۵۰۰ قبولی عالی‌رتبه دیگر</span>
+      </div>
+    </div>
+    <button
+            id="btnContact2"
+            class="primary"
+            aria-label="ارتباط با دکتر مظاهری"
+            title="ارتباط با دکتر مظاهری"
+    >
+      مشاهده روزمه کامل و تماس
+    </button>
+  </div>
+</section>
+
+<!-- ===================== مودال رزومه (اضافه شده) ===================== -->
+<style>
+  /* Modal backdrop and container */
+  .modal-backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 20px;
+  }
+  .modal-backdrop.open{ display: flex; }
+
+  .modal {
+    width: clamp(320px, 92vw, 900px);
+    max-height: 90vh;
+    overflow: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+    direction: rtl;
+    text-align: right;
+  }
+  .modal header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 8px;
+  }
+  .modal h3{ margin:0; color:#4b0082; font-size:1.1rem; }
+  .modal .close-btn{
+    background:transparent;
+    border:0;
+    font-size:1.35rem;
+    cursor:pointer;
+    line-height:1;
+  }
+  .modal .content{ margin-top:12px; line-height:1.6; color:#222; }
+
+  /* resume detail list inside modal */
+  .modal .resume-list{ margin-top:12px; padding:0; }
+  .modal .resume-item{ display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; }
+  .modal .resume-item i{ margin-top:4px; }
+
+  /* آیکون‌ها داخل مودال: دایره بنفش و تیک قرمز (در صورتی که از fa-check-circle استفاده شود) */
+  .modal .fa-check-circle{ color: #7b1fa2; } /* بنفش */
+  .modal .fa-check{ color: #e53935; } /* قرمز اگر از fa-check استفاده شود */
+
+  /* اگر خواستی آیکون‌ها لایه‌ای باشن، می‌تونی از کلاس‌های قبلی استفاده کنی.
+     اینجا فقط تضمین می‌کنیم آیکون‌های داخل مودال قابل مشاهده و هماهنگ‌اند. */
+
+  /* small responsive tweaks */
+  @media (max-width:640px){
+    .modal{ padding:14px; }
+    .modal h3{ font-size:1rem; }
+  }
+</style>
+
+<div id="resumeModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" role="document">
+    <header>
+      <h3 id="modalTitle">رزومه</h3>
+      <button class="close-btn" id="modalClose" aria-label="بستن پنجره">✕</button>
+    </header>
+
+    <div class="content" id="modalContent" tabindex="0">
+      <!-- محتوای داینامیک جاگذاری می‌شود -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // محتوای کامل‌تر رزومه‌ها (قابل ویرایش)
+  const resumes = {
+    rassaf: {
+      title: 'مهندس مهدی رصاف — رزومه کامل',
+      html: `
+
+        <div class="resume-list">
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>فارغ‌التحصیل کارشناسی ارشد مهندسی مکانیک</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>عضو سابق بنیاد ملی نخبگان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>عضو سابق خانه ریاضیات اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مخترع بیش از 2 اختراع ثبت‌شده در اداره ثبت اختراعات ایران</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>نویسنده بیش از ده مقالهٔ تخصصی مهندسی مکانیک در ژورنال‌های داخلی و خارجی</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مشاور رتبه های ۹، ۲۲، ۳۴، ۳۸، ۳۹، ۴۹، ۵۲، ۷۷، دوتا ۷۸، ۸۳ و بیش از ۵۰۰ قبولی عالی‌رتبه دیگر</div></div>
+
+          <div style="height:8px"></div>
+
+          <div><strong>دستاوردها :</strong></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>اولین و باسابقه ترین مربی انگیزشی و لایف کوچ در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مشاور صدها دانش آموز سمپاد مدارس اژه‌ای و فرزانگان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>برگزار کننده بزرگترین همایش مشاوره کنکور در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مؤسس اولین پانسیون مطالعاتی کنکور در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>بنیان گزار مجهزترین پانسیون مطالعاتی کنکور حال حاضر اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>طراح روش های مطالعاتی دروس اختصاصی و عمومی کنکور</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>طراح و مجری برگزاری کارگاههای روش آزمون دادن</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>ارائه دهنده جامع ترین فرم تحلیل آزمونهای آزمایشی</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>برگزار کننده بزرگترین اردوهای مطالعاتی نوروز در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>بیش از ۶ سال سابقه درخشان در مشاوره‌ی رتبه های برتر اصفهان و ایران</div></div>
+
+          <div style="height:12px"></div>
+
+          <div><strong>تماس و مشاوره:</strong></div>
+
+          <div style="height:5px"></div>
+
+          <a href="https://t.me/Mehdi_Rassaf" target="_blank" class="telegram-icon">
+            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+            <div>Mehdi_Rassaf@</div>
+          </a>
+          <a href="https://instagram.com/mehdirasaf" target="_blank" class="instagram-icon">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <div>mehdirasaf@</div>
+          </a>
+        </div>
+      `
+    },
+    mazaheri: {
+      title: 'دکتر علی مظاهری — رزومه کامل',
+      html: `
+        <div class="resume-list">
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>دکتری مهندسی مکانیک ساخت و تولید</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>بازرس مؤسسه قلمچی سال‌های ۱۳۹۰ تا ۱۳۹۲</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مدیر گروه کارشناسی ارشد قلمچی سال‌های ۱۳۹۲ تا ۱۳۹۳</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مدیر حوزه کارشناسی قلمچی سال‌های ۱۳۹۳ تا ۱۳۹۵</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مشاور رتبه های ۷، ۹، ۱۶، ۲۲، ۲۷، ۳۴، ۳۹، ۴۹، دوتا ۵۲، ۷۷، دوتا ۷۸، ۸۳ و ۸۸ و بیش از ۵۰۰ قبولی عالی‌رتبه دیگر</div></div>
+
+          <div style="height:8px"></div>
+
+          <div><strong>دستاوردها:</strong></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مشاور صدها دانش آموز سمپاد مدارس اژه‌ای و فرزانگان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>برگزار کننده بزرگترین همایش مشاوره کنکور در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>مؤسس اولین پانسیون مطالعاتی کنکور در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>بنیان گزار مجهزترین پانسیون مطالعاتی کنکور حال حاضر اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>برگزار کننده بزرگترین اردوهای مطالعاتی نوروز در اصفهان</div></div>
+          <div class="resume-item"><i class="fas fa-check-circle" aria-hidden="true"></i><div>بیش از ۱۰ سال سابقه درخشان در مشاوره‌ی رتبه های برتر اصفهان و ایران</div></div>
+
+          <div style="height:12px"></div>
+
+          <div><strong>تماس و مشاوره:</strong></div>
+
+          <div style="height:5px"></div>
+
+          <a href="https://t.me/Dr_alimazaheri" target="_blank" class="telegram-icon">
+            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+            <div>Dr_alimazaheri@</div>
+          </a>
+          <a href="https://instagram.com/Dr_alimazaheri" target="_blank" class="instagram-icon">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <div>Dr_alimazaheri@</div>
+          </a>
+        </div>
+      `
+    }
+  };
+
+  const modal = document.getElementById('resumeModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalContent = document.getElementById('modalContent');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal(key, triggerEl){
+    const data = resumes[key];
+    if(!data) return;
+    modalTitle.textContent = data.title;
+    modalContent.innerHTML = data.html;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    // focus management
+    setTimeout(()=> modalContent.focus(), 60);
+    modal._trigger = triggerEl;
+    // prevent body scroll
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    if(modal._trigger) modal._trigger.focus();
+    // restore scroll
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  // attach listeners (دکمه‌ها در سکشن‌ها)
+  const btn1 = document.getElementById('btnContact');
+  const btn2 = document.getElementById('btnContact2');
+  if(btn1) btn1.addEventListener('click', (e) => openModal('rassaf', e.currentTarget));
+  if(btn2) btn2.addEventListener('click', (e) => openModal('mazaheri', e.currentTarget));
+
+  // close handlers
+  modalClose.addEventListener('click', closeModal);
+  window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+  // click on backdrop to close
+  modal.addEventListener('click', (ev) => { if(ev.target === modal) closeModal(); });
+</script>
+<!-- ===================== پایان مودال ===================== -->
+
+
+<!-- Courses Section -->
+<section id="courses" class="courses-section" aria-label="دوره‌های تخصصی">
+  <div class="courses-header">
+    <h2>دوره‌های تخصصی</h2>
+    <p>
+      با شرکت در دوره‌های تخصصی ما، مسیر موفقیت در کنکور را برای خود هموار
+      کنید.
+    </p>
+  </div>
+  <div class="courses-grid">
+    <article class="course-card" tabindex="0">
+      <div class="course-icon" aria-hidden="true"
+      ><i class="fas fa-clock"></i
+      ></div>
+      <div class="course-content">
+        <h3 class="course-title">دوره مدیریت زمان طلایی</h3>
+        <p class="course-desc">
+          آموزش تکنیک‌های حرفه‌ای مدیریت زمان برای مطالعه مؤثر و افزایش بازدهی
+        </p>
+        <div class="course-footer">
+          <span>1,200,000 تومان</span>
+          <a href="#" tabindex="0">اطلاعات بیشتر</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course-card" tabindex="0">
+      <div class="course-icon" aria-hidden="true"
+      ><i class="fas fa-brain"></i
+      ></div>
+      <div class="course-content">
+        <h3 class="course-title">دوره تکنیک‌های تست‌زنی حرفه‌ای</h3>
+        <p class="course-desc">
+          آموزش روش‌های نوین تست‌زنی و افزایش سرعت و دقت در جلسه کنکور
+        </p>
+        <div class="course-footer">
+          <span>1,500,000 تومان</span>
+          <a href="#" tabindex="0">اطلاعات بیشتر</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="course-card" tabindex="0">
+      <div class="course-icon" aria-hidden="true"
+      ><i class="fas fa-book-open"></i
+      ></div>
+      <div class="course-content">
+        <h3 class="course-title">دوره جمع‌بندی نهایی کنکور</h3>
+        <p class="course-desc">
+          برنامه‌ریزی هوشمند برای دوران جمع‌بندی و مرور نهایی قبل از کنکور
+        </p>
+        <div class="course-footer">
+          <span>1,800,000 تومان</span>
+          <a href="#" tabindex="0">اطلاعات بیشتر</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="text-center" style="margin-top: 3rem;">
+    <a href="#" class="btn-link" style="font-weight: 700; color: #7c3aed; font-size: 1.125rem;">
+      مشاهده همه دوره‌ها
+      <i class="fas fa-arrow-left mr-2"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section
+        id="testimonials"
+        class="testimonials-section"
+        aria-label="نظرات دانش‌آموزان"
+>
+  <div class="testimonials-header">
+    <h2>نظرات دانش‌آموزان</h2>
+    <p>تجربه دانش‌آموزانی که با مشاوره ما به موفقیت رسیدند</p>
+  </div>
+  <div class="testimonials-grid">
+    <article class="testimonial-card" tabindex="0">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar" aria-hidden="true">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <div class="testimonial-name">محمد حسینی</div>
+          <div class="testimonial-rank">رتبه 87 کنکور تجربی</div>
+        </div>
+      </div>
+      <p class="testimonial-text">
+        "با راهنمایی‌های مهندس رصاف توانستم از رتبه 3000 در آزمون‌های آزمایشی
+        به رتبه 87 در کنکور اصلی برسم. برنامه‌ریزی دقیق و مشاوره‌های روانشناسی
+        ایشان واقعاً معجزه کرد."
+      </p>
+      <div class="testimonial-stars" aria-label="ارزیابی 5 ستاره">
+        <i class="fas fa-star"></i
+        ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i>
+      </div>
+    </article>
+
+    <article class="testimonial-card" tabindex="0">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar" aria-hidden="true">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <div class="testimonial-name">فاطمه محمدی</div>
+          <div class="testimonial-rank">رتبه 124 کنکور ریاضی</div>
+        </div>
+      </div>
+      <p class="testimonial-text">
+        "تکنیک‌های مدیریت زمان و تست‌زنی که در دوره‌های مهندس رصاف یاد گرفتم،
+        باعث شد در جلسه کنکور بتوانم به همه سوالات پاسخ دهم. مشاوره ایشان واقعاً
+        متفاوت و اثرگذار بود."
+      </p>
+      <div class="testimonial-stars" aria-label="ارزیابی 5 ستاره">
+        <i class="fas fa-star"></i
+        ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i>
+      </div>
+    </article>
+
+    <article class="testimonial-card" tabindex="0">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar" aria-hidden="true">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <div class="testimonial-name">علی رضایی</div>
+          <div class="testimonial-rank">رتبه 56 کنکور انسانی</div>
+        </div>
+      </div>
+      <p class="testimonial-text">
+        "برنامه‌ریزی شخصی‌سازی شده مهندس رصاف با توجه به شرایط و نقاط ضعف و
+        قوت من طراحی شده بود. این برنامه‌ریزی دقیق و منظم باعث شد بتوانم در
+        رشته مورد علاقه‌ام در دانشگاه تهران پذیرفته شوم."
+      </p>
+      <div class="testimonial-stars" aria-label="ارزیابی 4.5 ستاره">
+        <i class="fas fa-star"></i
+        ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star"></i
+      ><i class="fas fa-star-half-alt"></i>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Contact Section (added) -->
+<!-- Contact Section (Info Only) -->
+<section id="contact" class="contact-section py-12 bg-gray-50" aria-label="تماس با ما">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white shadow-lg rounded-2xl p-8">
+      <h3 class="text-3xl font-bold mb-6 text-center text-gray-800">تماس با ما</h3>
+      <p class="mb-8 text-gray-600 text-center">
+        هر زمان نیاز به مشاوره، سوال یا گزارش داشتید با ما در ارتباط باشید.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Phone -->
+        <div class="flex items-start gap-3">
+          <i class="fas fa-phone text-indigo-600 text-xl mt-1"></i>
+          <div>
+            <div class="font-bold text-gray-800">شماره تماس</div>
+            <div class="text-sm text-gray-600">03136266926 | 09013282719</div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start gap-3">
+          <i class="fas fa-envelope text-indigo-600 text-xl mt-1"></i>
+          <div>
+            <div class="font-bold text-gray-800">ایمیل</div>
+            <div class="text-sm text-gray-600">inmoshaver.ir@</div>
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="flex items-start gap-3">
+          <i class="fas fa-map-marker-alt text-indigo-600 text-xl mt-1"></i>
+          <div>
+            <div class="font-bold text-gray-800">آدرس</div>
+            <div class="text-sm text-gray-600">اصفهان — چهارباغ بالا — خیابان شریعتی شرقی — کوچه علی اکبری — بن بست دانش</div>
+          </div>
+        </div>
+
+        <!-- Working Hours -->
+        <div class="flex items-start gap-3">
+          <i class="fas fa-clock text-indigo-600 text-xl mt-1"></i>
+          <div>
+            <div class="font-bold text-gray-800">ساعات کاری</div>
+            <div class="text-sm text-gray-600">شنبه تا پنج‌شنبه 9 صبح تا 7 عصر</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="mt-8 flex flex-col md:flex-row gap-4">
+        <!-- Google Maps -->
+        <div class="flex-1 rounded-xl overflow-hidden shadow">
+          <iframe
+                  src="https://www.google.com/maps?q=32.6284499,51.6605411&z=17&output=embed"
+                  width="100%" height="300"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- نشان -->
+        <div class="flex-1 rounded-xl overflow-hidden shadow">
+          <iframe
+                  src="https://neshan.org/maps/share/90_bZapapxap1D"
+                  width="100%" height="300"
+                  style="border:0;"
+                  allowfullscreen
+                  loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="cta-section" aria-label="تماس برای مشاوره رایگان">
+  آماده شروع مسیر موفقیت هستید؟ همین حالا برای دریافت مشاوره با ما تماس بگیرید
+</section>
+<!-- JavaScript -->
+<script>
+  // تابع اضافه کردن انیمیشن کلیک و انتقال به صفحه
+  function addClickAnimationAndRedirect(button, url) {
+    if (!button) return;
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      button.classList.add("clicked");
+      setTimeout(() => {
+        // اگر لینک داخلی (hash) است، از اسکرول نرم استفاده کن
+        if (typeof url === 'string' && url.startsWith('#')) {
+          const target = document.querySelector(url);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // update history without reloading
+            history.replaceState(null, '', url);
+          } else {
+            window.location.href = url;
+          }
+        } else {
+          window.location.href = url;
+        }
+      }, 350); // هماهنگ با مدت انیمیشن کلیک
+    });
+  }
+
+  // اعمال انیمیشن و هدایت برای دکمه‌های ثبت نام و ورود صفحه هیرو
+  addClickAnimationAndRedirect(
+    document.getElementById("btnRegister"),
+    "register.html"
+  );
+  addClickAnimationAndRedirect(
+    document.getElementById("btnLogin"),
+    "login.html"
+  );
+
+  // دکمه‌های ثبت نام و ورود در ناوبری
+  addClickAnimationAndRedirect(
+    document.getElementById("btnRegisterNav"),
+    "register.html"
+  );
+  addClickAnimationAndRedirect(
+    document.getElementById("btnLoginNav"),
+    "login.html"
+  );
+
+  // Smooth-scroll for nav links (progressive enhancement)
+  document.querySelectorAll('a.nav-link[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const hash = this.getAttribute('href');
+      const target = document.querySelector(hash);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', hash);
+    });
+  });
+
+  // Contact form handling (client-side). Tries to POST to /api/contact, if fails saves to localStorage as fallback.
+  (function(){
+    const form = document.getElementById('contactForm');
+    const successBox = document.getElementById('formSuccess');
+    const errorBox = document.getElementById('formError');
+    const btn = document.getElementById('btnSendContact');
+
+    function showSuccess(){
+      errorBox.style.display = 'none';
+      successBox.style.display = 'block';
+      btn.disabled = true;
+      btn.classList.add('opacity-70');
+      setTimeout(()=>{
+        successBox.style.display = 'none';
+        btn.disabled = false;
+        btn.classList.remove('opacity-70');
+        form.reset();
+      }, 4500);
+    }
+
+    function showError(){
+      successBox.style.display = 'none';
+      errorBox.style.display = 'block';
+      setTimeout(()=>{ errorBox.style.display = 'none'; }, 5000);
+    }
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      // basic validation
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if(!name || !phone || !message){
+        showError();
+        return;
+      }
+
+      const payload = { name, phone, email, message, createdAt: new Date().toISOString() };
+
+      try{
+        // try to POST to a backend endpoint if exists
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if(res.ok){
+          showSuccess();
+          return;
+        }
+
+        // if backend returns non-ok, fallback
+        throw new Error('server error');
+      }catch(err){
+        // fallback: save to localStorage queue
+        try{
+          const prev = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
+          prev.push(payload);
+          localStorage.setItem('contact_submissions', JSON.stringify(prev));
+          showSuccess();
+        }catch(e){
+          console.error(e);
+          showError();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>
