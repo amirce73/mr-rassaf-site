@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>لیست دانش‌آموزان تجربی - فونت وزیر</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Vazir', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbfd;
+      color: #34495e;
+      padding: 40px 15px;
+      direction: rtl;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #2c3e50;
+    }
+    table {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+    thead {
+      background: green;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    th, td {
+      padding: 15px 25px;
+      border-bottom: 1px solid #ecf0f1;
+      text-align: center;
+    }
+    tbody tr:hover {
+      background: #d6e9fe;
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        border-radius: 10px;
+        padding: 15px;
+      }
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+      }
+      td::before {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: 700;
+        content: attr(data-label);
+        color: #2980b9;
+        text-align: right;
+      }
+    }
+
+    .designer-row {
+      background-color: lightgreen;
+    }
+    .designer-row td {
+      position: relative;
+      font-weight: bold;
+      color: #1a73e8; /* رنگ مشخص برای برجسته کردن */
+    }
+
+    .designer-note {
+      font-size: 0.7em;
+      color: #666;
+      margin-left: 8px;
+      font-weight: normal;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>لیست دانش‌آموزان قبولی رشته ریاضی</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>نام دانش‌آموز</th>
+    <th>رشته قبولی</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr><td data-label="نام دانش‌آموز">محمد رضا بهراميان</td><td data-label="رشته قبولی">مهندسى مكانيك دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد مهدى جراحى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير حسين براتى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">ايمان علييور</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد هومان كشورى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">آرمين مالكى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سعيد رضوى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">ثمين على اكبرى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير حسين جوادى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">مهدى كرمى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى امير كبير</td></tr>
+  <tr><td data-label="نام دانش‌آموز">پارسا آهنى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى امير كبير</td></tr>
+  <tr><td data-label="نام دانش‌آموز">آروين بحرينى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه تهران</td></tr>
+  <tr><td data-label="نام دانش‌آموز">توحيد آقاداوود</td><td data-label="رشته قبولی">مهندسى عمران دانشگاه تهران</td></tr>
+  <tr><td data-label="نام دانش‌آموز">احسان صالحى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه تهران</td></tr>
+  <tr><td data-label="نام دانش‌آموز">عرفان نورپرور</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه تهران</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير محمد ميرطالبى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شريف</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سعيد منتظرى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه علم وصنعت</td></tr>
+  <tr><td data-label="نام دانش‌آموز">ميلاد ربيعى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شهيد بهشتی</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير محمد شاهين</td><td data-label="رشته قبولی">مهندسى پزشكى دانشگاه صنعتى امير كبير</td></tr>
+  <tr><td data-label="نام دانش‌آموز">متين شفيعيون</td><td data-label="رشته قبولی">مهندسى مواد دانشگاه شريف (قبولى پانسيون)</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امين روحانى فر</td><td data-label="رشته قبولی">مهندسى شيمى دانشگاه علم و صنعت</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير حسين حامى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سهند ذوفن</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">هومن رحيمى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه شهيد بهشتى</td></tr>
+  <tr class="designer-row">
+    <td data-label="نام دانش‌آموز">
+      امير مهدى داودى
+      <small class="designer-note">طراح همین سایت</small>
+    </td>
+    <td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه اصفهان</td>
+  </tr>
+  <tr><td data-label="نام دانش‌آموز">مهدى حبيبى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">پارسا اشراقي</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سجاد عليزاده</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد مهدى زمانى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمدرضا شريف</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">متين معصوم زاده</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمدرضا مرادى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">عارف قريشى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">حسين آزادى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">على بابايي پور</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">فريد مرادى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">عليرضا عنايت</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمدرضا حجازى</td><td data-label="رشته قبولی">مهندسى مكانيك دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">اميرحسين سليمانى</td><td data-label="رشته قبولی">مهندسى مكانيك دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">عليرضا افشارى پور</td><td data-label="رشته قبولی">مهندسى مكانيك دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد اسدى نژاد</td><td data-label="رشته قبولی">مهندس مكانيك دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سروش قاسمى</td><td data-label="رشته قبولی">مهندسى عمران دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد حسين صدورى</td><td data-label="رشته قبولی">مهندسي عمران دانشگاه اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">نويد رضا فتوحى</td><td data-label="رشته قبولی">مهندسى صنايع دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">مسيح استكى</td><td data-label="رشته قبولی">مهندسى صنايع دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">كسرى رياحى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان (قبولى پانسيون)</td></tr>
+  <tr><td data-label="نام دانش‌آموز">آرين شرفى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد امين كريمي</td><td data-label="رشته قبولی">علوم كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد مهدى عباسى</td><td data-label="رشته قبولی">علوم كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد خانعلى</td><td data-label="رشته قبولی">علوم كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">پارسا منشورى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">على متقى</td><td data-label="رشته قبولی">مهندسى كامپيوتر دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">حسين خوش خلق</td><td data-label="رشته قبولی">مهندسى برق دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">كتايون مودت نژاد</td><td data-label="رشته قبولی">مهندسى مكانيك دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">عرفان كريمى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">على براتى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد متين كرامت منش</td><td data-label="رشته قبولی">مهندسى مواد دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">شهداد حاجى نيلى</td><td data-label="رشته قبولی">مهندسى مواد دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">آرمان حسينى</td><td data-label="رشته قبولی">مهندسى هوا فضا دانشگاه صنعتى اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير على لطفى</td><td data-label="رشته قبولی">مهندسى برق دانشگاه شهركرد</td></tr>
+  <tr><td data-label="نام دانش‌آموز">آرمين حبيب الهى</td><td data-label="رشته قبولی">علوم كامپيوتر دانشگاه تبريز</td></tr>
+  <tr><td data-label="نام دانش‌آموز">محمد حسين رجبی</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه كاشان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">سپهر افضلى</td><td data-label="رشته قبولی">مهندسى عمران دانشگاه يزد</td></tr>
+  <tr><td data-label="نام دانش‌آموز">حوريه داوودى</td><td data-label="رشته قبولی">مهندسى معمارى دانشگاه كاشان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">پرنيان ملك زاده</td><td data-label="رشته قبولی">مهندسى عمران دانشگاه كاشان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">فريما ناصرى</td><td data-label="رشته قبولی">مهندسى معمارى دانشگاه زنجان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">حسين آقا ابراهيميان</td><td data-label="رشته قبولی">مهندسى پزشکی دانشگاه صنعتى سهند تبريز</td></tr>
+  <tr><td data-label="نام دانش‌آموز">امير داوودى</td><td data-label="رشته قبولی">مهندسى شهرسازى دانشگاه هنر اصفهان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">مسيح فاطمى</td><td data-label="رشته قبولی">مهندسى مكانيک دانشگاه سمنان</td></tr>
+  <tr><td data-label="نام دانش‌آموز">على يوسفى</td><td data-label="رشته قبولی">مهندسى نساجى دانشگاه صنعتى اصفهان</td></tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>
