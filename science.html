@@ -78,6 +78,21 @@
             text-align: right;
           }
         }
+        .designer-row {
+          background-color: lightgreen;
+        }
+        .designer-row td {
+          position: relative;
+          font-weight: bold;
+          color: #1a73e8; /* رنگ مشخص برای برجسته کردن */
+        }
+
+        .designer-note {
+          font-size: 0.7em;
+          color: #666;
+          margin-left: 8px;
+          font-weight: normal;
+        }
     </style>
 </head>
 <body>
@@ -110,7 +125,13 @@
     <tr><td data-label="نام دانش‌آموز">اميد خسروى</td><td data-label="رشته قبولی">پزشكى علوم پزشكى اصفهان</td></tr>
     <tr><td data-label="نام دانش‌آموز">آرين بهبهاني</td><td data-label="رشته قبولی">دندانپزشكى علوم پزشكى البرز</td></tr>
     <tr><td data-label="نام دانش‌آموز">محمد رضا بديع صنايع</td><td data-label="رشته قبولی">دندانپزشكى علوم پزشكى اصفهان</td></tr>
-    <tr><td data-label="نام دانش‌آموز">صالح جهانگرد</td><td data-label="رشته قبولی">دندانپزشكى علوم پزشكى اصفهان</td></tr>
+    <tr class="designer-row">
+        <td data-label="نام دانش‌آموز">
+            صالح جهانگرد
+            <small class="designer-note">دبیر زیست دوره ها</small>
+        </td>
+        <td data-label="رشته قبولی">دندانپزشكى علوم پزشكى اصفهان</td>
+    </tr>
     <tr><td data-label="نام دانش‌آموز">سحر ديباجيان</td><td data-label="رشته قبولی">پزشكى علوم پزشكى اصفهان</td></tr>
     <tr><td data-label="نام دانش‌آموز">محمد ارسلان ملكى</td><td data-label="رشته قبولی">دندانپزشكى علوم پزشكى يزد</td></tr>
     <tr><td data-label="نام دانش‌آموز">ترانه شفيعى</td><td data-label="رشته قبولی">دندانپزشكى علوم پزشكى يزد</td></tr>
