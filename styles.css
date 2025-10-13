@@ -77,9 +77,14 @@ nav a.nav-link:hover::after {
 
 .hero-text {
     max-width: 600px;
-    transform: translateX(-430px);
     text-align: center;
     align-items: center;
+    margin: 0 auto; /* مرکز افقی */
+    position: relative;
+}
+
+.star-service{
+    margin-top: 37px;
 }
 
 .hero-socials {
@@ -733,9 +738,9 @@ a.btn-secondary:hover {
 
 /* wrapper عکس: حتماً overflow:hidden تا هیچ المانی از کناره‌ها بیرون نزند */
 .hero-image-wrap{
-    width:100%;
-    max-width:var(--container-max-width);
-    height:var(--hero-image-height-desktop);
+    width:70%;
+    /*max-width:var(--container-max-width);*/
+    /*height:var(--hero-image-height-desktop);*/
     border-radius:14px;
     overflow:hidden;
     display:block;
