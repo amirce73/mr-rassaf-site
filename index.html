@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'tailwind.css' %}">
     <link rel="shortcut icon" href="{% static 'images/inmoshaver-logo.png' %}" type="image/png">
     <link rel="stylesheet" href="{% static 'fonts/fontawesome-free-7.1.0-web/css/all.css' %}">
-    <link rel="shortcut icon" href="{% static 'images/inmoshaver-logo.png" type="image/png' %}">
+    <link rel="shortcut icon" href="{% static 'images/inmoshaver-logo.png/png' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}"/>
 </head>
 <body>
@@ -36,9 +36,9 @@
                class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">دانش آموزان</a>
             <a href="#accepts"
                class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">قبولی ها</a>
-            <a href="#final" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">کارنامه
+            <a href="#finals" class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">کارنامه
                 ها</a>
-            <a href="#progress"
+            <a href="#upgrades"
                class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">پیشرفت‌ها</a>
             <a href="#courses"
                class="nav-link px-3 py-2 rounded text-white hover:bg-purple-600 transition duration-300">دوره‌ها</a>
@@ -90,7 +90,7 @@
                     <option value="#home">صفحه اصلی</option>
                     <option value="#students">دانش آموزان</option>
                     <option value="#final">کارنامه نهایی</option>
-                    <option value="#progress">پیشرفت‌ها</option>
+                    <option value="#upgardes">پیشرفت‌ها</option>
                     <option value="#courses">دوره‌ها</option>
                     <option value="#testimonials">رضایت شما</option>
                     <option value="#contact">تماس</option>
@@ -293,64 +293,34 @@
     </div>
 </section>
 
+<section id="students" class="testimonials-section" aria-label="نظرات دانش‌آموزان">
+    <div class="testimonials-header">
+        <h2>دانش‌آموزان ما</h2>
+        <p class="testimonials-subtitle">دانش آموزان تلاشگر و موفق آکادمی ما</p>
+    </div>
 
+    <div class="phone-slider">
+        <div class="slider-wrapper">
+            <button class="testimonials_next" aria-label="اسلاید قبلی">&#10095;</button>         
 
-{#<section class="phone-slider">#}
-{#    <div class="slider-wrapper">#}
-{##}
-{#        <div class="slider-container">#}
-{#            <!-- اسلایدها -->#}
-{#            {% for img in images %}#}
-{#                <div class="slide active">#}
-{#                    <img src="{{ img }}" alt="slide{{ forloop.counter }}">#}
-{#                </div>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{##}
-{#        <!-- دکمه‌ها بیرون از عکس -->#}
-{#        <button class="prev">&#10094;</button>#}
-{#        <button class="next">&#10095;</button>#}
-{#    </div>#}
-{##}
-{#    <!-- نقاط پایین -->#}
-{#    <div class="slider-dots">#}
-{#        <span class="dot active"></span>#}
-{#        <span class="dot"></span>#}
-{#        <span class="dot"></span>#}
-{#    </div>#}
-{#</section>#}
- 
+            <div class="slider-container">
+                {% for img in images_for_students %}
+                    <div class="slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
+                        <img src="{{ img }}" alt="نظر دانش‌آموز {{ forloop.counter }}">
+                    </div>
+                {% endfor %}
+            </div>
 
- 
+            <button class="testimonials_prev" aria-label="اسلاید بعدی">&#10094;</button>
+        </div>
 
-{#<section id="students" class="students-section" aria-label="نظرات دانش‌آموزان">#}
-{#    <div class="testimonials-header">#}
-{#        <h2>دانش‌آموزان ما</h2>#}
-{#        <p id="tes">دانش آموزان برتر</p>#}
-{#    </div>#}
-{##}
-{#    <section class="phone-slider">#}
-{#        <div class="slider-wrapper">#}
-{#            <!-- دکمه‌های چپ و راست -->#}
-{##}
-{#        <button class="prev">&#10094;</button>#}
-{#        #}
-{#            <div class="slider-container">#}
-{#                {% for img in images_for_students %}#}
-{#                    <div class="slide{% if forloop.first %} active{% endif %}">#}
-{#                        <img src="{{ img }}" alt="slide{{ forloop.counter }}">#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{##}
-{#        <button class="next" style="padding-right: 5px;margin-right: 35px;">&#10095;</button>#}
-{#            #}
-{#        </div>#}
-{#    </section>#}
-{#</section>#}
-
-
-
+        <div class="slider-dots" style="display: none">
+            {% for img in images_for_students %}
+                <span class="dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}"></span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 <!-- Stats Section -->
 <section id="accepts" aria-label="آمار دانش‌آموزان" class="accepts-section">
 
@@ -378,9 +348,6 @@
         </div>
     </div>
 </section>
-
-
-
 
 <!-- Services Section -->
 <section id="services" class="services-section" aria-label="خدمات تخصصی">
@@ -593,9 +560,65 @@
     </div>
 </div>
 
- 
+<section id="finals" class="testimonials-section" aria-label="نظرات دانش‌آموزان">
+    <div class="testimonials-header">
+        <h2>کارنامه امتحان نهایی و کنکور 1404</h2>
+        <p class="testimonials-subtitle">نتایج درخشانی که با تلاش بدست میاد</p>
+    </div>
+
+    <div class="phone-slider">
+        <div class="slider-wrapper">
+            <button class="testimonials_next" aria-label="اسلاید قبلی">&#10095;</button>         
+        
+            <div class="slider-container">
+                {% for img in images_for_finals %}
+                    <div class="slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
+                        <img src="{{ img }}" alt="نظر دانش‌آموز {{ forloop.counter }}">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button class="testimonials_prev" aria-label="اسلاید بعدی">&#10094;</button>
+        </div>
+        
+        <div class="slider-dots" style="display: none">
+            {% for img in images_for_students %}
+                <span class="dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}"></span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- ===================== پایان مودال ===================== -->
 
+<section id="upgrades" class="testimonials-section" aria-label="نظرات دانش‌آموزان">
+    <div class="testimonials-header">
+        <h2>پیشرفت ها در تراز و آزمون</h2>
+        <p class="testimonials-subtitle">پیشرفت روز به روز دانش آموزان</p>
+    </div>
+
+    <div class="phone-slider">
+        <div class="slider-wrapper">
+            <button class="testimonials_next" aria-label="اسلاید قبلی">&#10095;</button>         
+        
+            <div class="slider-container">
+                {% for img in images_for_upgrades %}
+                    <div class="slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
+                        <img src="{{ img }}" alt="نظر دانش‌آموز {{ forloop.counter }}">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button class="testimonials_prev" aria-label="اسلاید بعدی">&#10094;</button>
+        </div>
+        
+        <div class="slider-dots" style="display: none">
+            {% for img in images_for_students %}
+                <span class="dot{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}"></span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 <!-- Courses Section -->
 <section id="courses" class="courses-section" aria-label="دوره‌های تخصصی">
@@ -619,8 +642,8 @@
                     دکتر علی مظاهری
                 </p>
                 <div class="course-footer">
-                    <span>1,200,000 تومان</span>
-                    <a href="#" tabindex="0">اطلاعات بیشتر</a>
+                    <span class="course_phone">برای اطلاعات بیشتر تماس بگیرید</span>
+                    <a href="tel:09013282719" tabindex="0">09013282719</a>
                 </div>
             </div>
         </article>
@@ -637,8 +660,8 @@
                     طرح مشاوره پیشرفته
                 </p>
                 <div class="course-footer">
-                    <span>1,500,000 تومان</span>
-                    <a href="#" tabindex="0">اطلاعات بیشتر</a>
+                    <span class="course_phone">برای اطلاعات بیشتر تماس بگیرید</span>
+                    <a href="tel:09013282719" tabindex="0">09013282719</a>
                 </div>
             </div>
         </article>
@@ -653,8 +676,8 @@
                     برنامه‌ریزی هوشمند برای دوران جمع‌بندی و مرور نهایی قبل از کنکور
                 </p>
                 <div class="course-footer">
-                    <span>1,800,000 تومان</span>
-                    <a href="#" tabindex="0">اطلاعات بیشتر</a>
+                    <span class="course_phone">برای اطلاعات بیشتر تماس بگیرید</span>
+                    <a href="tel:09013282719" tabindex="0">09013282719</a>
                 </div>
             </div>
         </article>
@@ -672,7 +695,7 @@
             <button class="testimonials_next" aria-label="اسلاید قبلی">&#10095;</button>         
         
             <div class="slider-container">
-                {% for img in images_for_students %}
+                {% for img in images_for_testimonials %}
                     <div class="slide{% if forloop.first %} active{% endif %}" data-index="{{ forloop.counter0 }}">
                         <img src="{{ img }}" alt="نظر دانش‌آموز {{ forloop.counter }}">
                     </div>
